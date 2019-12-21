@@ -226,6 +226,12 @@ async def kawaii(ctx, user: typing.Optional[discord.Member] = None):
     else:
         await ctx.send("{} is so kawaii".format(user.mention))
 
+@bot.command()
+async def spam(ctx, text: typing.Optional[str] = "spam", times: typing.Optional[int] = 5):
+    """USAGE: spam <text> <number> -> spams <text> <number> times, use quotes to enclose text"""
+    for i in range(times):
+        await ctx.send(text)
+
 
 @bot.event
 async def on_member_join(member):
